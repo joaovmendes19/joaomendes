@@ -30,19 +30,40 @@ public class ExercicioUm {
 
         switch (menu) {
             // 1) Crie um programa que calcule a média (`(nota1 + nota2 + nota3 / 3)`)
+            
             case 1:
                 // media(double notaUm, double notaDois, double notaTres)
+                
+                media(3, 4, 3);
+
                 break;
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
             case 2:
                 // area(double ladoUm, double ladoDois)
+                System.out.println(area(15,12));
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
             case 3:
                 // volume(double largura, double altura, double profundidade)
+                double largura=10;
+                double altura = 20;
+                double profundidade=30;
+                double volume = (volume(largura,altura,profundidade));
+                System.out.println(volume);
                 break;
             // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
             case 4:
+            double base =20;
+            double verificar = 30;
+            boolean batata  = valorMaiorQueDobro( base, verificar);
+            if(batata){
+                System.out.println("O valor é maior que o dobro de "+ verificar);
+            }
+            else{
+                System.out.println("O valor é menor que o dobro de "+ verificar );
+            }
+
+            System.out.println(batata ? "O valor é maior que o dobro de "+ verificar : "O valor é menor que o dobro de "+ verificar );
                 // valorMaiorQueDobro(double base, double verificar)
                 break;
             // 5) Crie um programa que calcule _bhaskara_
@@ -91,22 +112,46 @@ public class ExercicioUm {
     }
 
     public static double media(double notaUm, double notaDois, double notaTres) {
+    
+                double media = (notaUm + notaDois+ notaTres)/3;
+                System.out.println("O valor da média é" + media);
+
         return 0;
     }
 
     public static double area(double ladoUm, double ladoDois) {
-        return 0;
+        System.out.println("Valor da area");
+        double area  = (ladoUm * ladoDois);
+        
+
+
+        
+        return area;
     }
 
     public static double volume(double largura, double altura, double profundidade) {
-        return 0;
+        System.out.println("Calcular volume");
+        double volume  = (largura * altura * profundidade);
+        return volume;
+
     }
 
     public static boolean valorMaiorQueDobro(double base, double verificar) {
-        return false;
+        System.out.println("Calculo maior que o Dobro.");
+
+        if((base*2) < verificar){
+
+            return true;
+
+        }
+
+            return false;
     }
 
     public static double[] bhaskara(int a, int b, int c) {
+        double delta = (b*b) - (4*a*c);
+        double bhaskara [] =  
+
         return new double[2];
     }
 
