@@ -1,10 +1,7 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
+import java.io.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.util.Random;
 import java.util.Scanner;
 
 public class ExercicioTres {
@@ -36,11 +33,17 @@ public class ExercicioTres {
         switch (menu) {
             // 1) Crie um programa que receba um valor e calcule a tabuada deste valor, salvando seu resultado em um arquivo de texto.
             case 1:
-                // tabuada(int number);
+               
+                System.out.println("Digite um valor que deseja a impressão da tabuada");
+                int number = scanner.nextInt();
+                tabuada( number);
+
+
+                
                 break;
             // 2) Crie um programa que leia e imprima no console todas as linhas de um arquivo de texto.
             case 2:
-                // lerArquivoTexto(String arquivo);
+                // lerArquivoTexto(String arquivo)
                 break;
             // 3) Crie um programa que receba como entrada da classe Main dois valores numéricos e calcule as operações básicas com eles.
             case 3:
@@ -86,7 +89,21 @@ public class ExercicioTres {
     }
 
     public static void tabuada(int numero) {
-        
+         String tabuada1 = "";
+
+
+
+            for(int tb=1;tb<=10; tb++){
+                tabuada1 += ("\n " + numero + " x " + tb +" = " +(numero * tb) + "\n");
+            }
+
+
+            try {
+            Writer fileWriter = new FileWriter("./src/archives/tabuada.txt", true); 
+            fileWriter.write(tabuada1);  
+            fileWriter.close();  
+            }catch ( IOException e)  {
+            }
     }
 
     public static void lerArquivoTexto(String arquivo) {

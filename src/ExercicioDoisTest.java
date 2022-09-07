@@ -5,7 +5,7 @@ import org.junit.Test;
 public class ExercicioDoisTest {
     @Test
     public void calculaMediaTest() {
-        assertEquals(5.3333,ExercicioDois.calculaMedia(5, 5, 6), 0.0003f);
+        assertEquals(5.3333,ExercicioDois.calculaMedia(5.0, 5.0, 6.0), 0.0003f);
     }
     @Test
     public void qualMesTest() {

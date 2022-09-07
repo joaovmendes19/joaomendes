@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class ExercicioUm {
 
     public static void call(Scanner scanner) {
@@ -80,7 +82,16 @@ public class ExercicioUm {
                 break;
             // 8) Crie um programa que teste se um valor é par ou ímpar
             case 8:
-                // parOuImpar(int valor)
+            int valor =15;     
+            boolean verificacao = parOuImpar( valor);
+            if(verificacao=true)
+            
+            {
+                System.out.println("\n Esse valor é par: " +valor);
+            }
+            else{
+                System.out.println("\n Esse valor é impar: "+valor);
+            }
                 break;
             // 9) Crie um programa que compare dois valores Strings
             case 9:
@@ -150,9 +161,22 @@ public class ExercicioUm {
 
     public static double[] bhaskara(int a, int b, int c) {
         double delta = (b*b) - (4*a*c);
-        double bhaskara [] =  
+        double x1=0;
+        double x2=0;
+        if(delta<0){
+            System.out.println("Delta é negativo");
 
-        return new double[2];
+        } else if (delta==0){
+            x1= -b/(2*a);
+        x2=x1;
+        }else{
+            x1=((-b)+Math.sqrt(delta))/(2*a);
+            x1=((-b)-Math.sqrt(delta))/(2*a);
+
+        }
+        System.out.println(x1);
+        System.out.println(x2);
+        return new double[] {x1,x2};
     }
 
     public static double mediaViagem(double distancia, double tempo) {
@@ -160,10 +184,16 @@ public class ExercicioUm {
     }
 
     public static double percentualImposto(double faturamento, double qtdImposto) {
-        return 0;
+
+        return (qtdImposto*100)/faturamento;
     }
 
     public static boolean parOuImpar(int valor) {
+        if(valor%2==0)
+        {
+             return true;
+        }
+
         return false;
     }
 
@@ -172,10 +202,14 @@ public class ExercicioUm {
     }
 
     public static int convertString(String valor) {
-        return 0;
+        return (int) Double.parseDouble(valor);
     }
 
     public static double percentualImpostoSalario(double salario) {
+        if(salario<=1983) {
+            return 0;
+            
+        }
         return -1;
     }
 
